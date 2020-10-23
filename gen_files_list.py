@@ -22,7 +22,7 @@ def find_UUID_for_all_path(base_dir, path_list):
     data_sets = []
     for path in path_list:
         # get all data files in a data set via ls
-        files = subprocess.check_output(["ls", base_dir + path]).decode("utf-8")[1:]
+        files = subprocess.check_output(["ls", base_dir + path]).decode("utf-8")[:]
         for filename in files.split():
             index = filename.find("_metadata.json")
             # find the UUID from the filename of metadata file
